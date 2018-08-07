@@ -15,22 +15,25 @@ public class StoryModel {
     private String title;
     private String description;
     private int size;
+    private String posterPath;
     @ColumnInfo(name="updated_at")
     private Date updatedAt;
 
-    public StoryModel(int id, String title, String description, int size, Date updatedAt) {
+    public StoryModel(int id, String title, String description, int size,String posterPath, Date updatedAt) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.size = size;
+        this.posterPath = posterPath;
 
     }
 
     @Ignore
-    public StoryModel(String title, String description, int size, Date updatedAt) {
+    public StoryModel(String title, String description, int size,String posterPath, Date updatedAt) {
         this.title = title;
         this.description = description;
         this.size = size;
+        this.posterPath = posterPath;
     }
 
     public int getId() {
@@ -71,5 +74,13 @@ public class StoryModel {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 }

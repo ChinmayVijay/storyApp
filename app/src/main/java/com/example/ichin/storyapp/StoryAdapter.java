@@ -1,6 +1,7 @@
 package com.example.ichin.storyapp;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -70,6 +71,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
             storyTitle.setText(story.getTitle());
             storyWords.setText(""+story.getSize());
+            Uri uri = Uri.parse(story.getPosterPath());
+            posterImage.setImageURI(uri);
 
             posterImage.setOnClickListener(new View.OnClickListener() {
                 @Override
