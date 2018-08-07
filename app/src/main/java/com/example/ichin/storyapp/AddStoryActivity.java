@@ -85,7 +85,7 @@ public class AddStoryActivity extends AppCompatActivity {
 
     protected void saveStory(){
         String description = storyDescription.getText().toString();
-        String title = storyDescription.getText().toString();
+        String title = storyTitle.getText().toString();
         Date date = new Date();
         int size = 250;
 

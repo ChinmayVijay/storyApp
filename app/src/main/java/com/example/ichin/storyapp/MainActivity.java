@@ -38,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
         storyRecyclerView = findViewById(R.id.rv_stories);
         btn_fab_add_story = findViewById(R.id.fab_add_story);
 
+        mListener = new OnStoryCoverListener() {
+            @Override
+            public void onClick(int itemId) {
+                Intent storyIntent = new Intent(MainActivity.this,AddStoryActivity.class);
+                storyIntent.putExtra(AddStoryActivity.EXTRA_TASK_ID,itemId);
+                startActivity(storyIntent);
+            }
+        };
+
         mAdadpter = new StoryAdapter(this,mListener);
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
@@ -75,14 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupViewModel();
 
-        mListener = new OnStoryCoverListener() {
-            @Override
-            public void onClick(int itemId) {
-                Intent storyIntent = new Intent(getApplicationContext(),AddStoryActivity.class);
-                storyIntent.putExtra(AddStoryActivity.EXTRA_TASK_ID,itemId);
-                startActivity(storyIntent);
-            }
-        };
+
 
     }
 
