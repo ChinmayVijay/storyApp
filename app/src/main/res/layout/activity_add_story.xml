@@ -34,10 +34,11 @@
             <ImageView
                 android:id="@+id/iv_story_poster"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:clickable="true"
                 android:padding="16dp"
                 android:src="@drawable/ic_take_image"
+                android:scaleType="fitXY"
                 android:tooltipText="Take a cover photo for the story"
 
                 />
@@ -84,7 +85,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/et_"
+                android:id="@+id/et_plot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="#use #hastags #to #define #plotOfTheStory"
@@ -103,16 +104,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                >
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_character_one"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_take_image"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/ImageStyle"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
                     android:tooltipText="Take a cover photo for the story" />
 
                 <View
@@ -121,15 +122,15 @@
                     android:layout_margin="5dp"
                     android:background="@android:color/darker_gray" />
 
-                <ImageView
+
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_character_two"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_take_image"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/ImageStyle"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
                     android:tooltipText="Take a cover photo for the story" />
+
 
                 <View
                     android:layout_width="1dp"
@@ -137,15 +138,16 @@
                     android:layout_margin="5dp"
                     android:background="@android:color/darker_gray" />
 
-                <ImageView
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_character_three"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:padding="16dp"
-                    android:src="@drawable/ic_take_image"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/ImageStyle"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
                     android:tooltipText="Take a cover photo for the story" />
+
 
 
             </LinearLayout>

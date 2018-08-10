@@ -29,4 +29,5 @@ public interface StoryDao {
 
     @Query("SELECT * FROM story where id=:id")
     LiveData<StoryModel> loadTaskbyId(int id);
+
 }
