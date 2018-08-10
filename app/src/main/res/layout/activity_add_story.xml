@@ -5,6 +5,7 @@
     tools:context=".AddStoryActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/viewBg"
     >
 
 
@@ -12,7 +13,7 @@
         tools:context=".AddStoryActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+
         >
 
         <LinearLayout
@@ -23,134 +24,236 @@
             android:orientation="vertical"
             android:paddingBottom="75dp">
 
-            <TextView
-                android:id="@+id/tv_story_poster_heading"
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Story Cover"
-                android:textAppearance="@android:style/TextAppearance.Medium"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/iv_story_poster"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:clickable="true"
-                android:padding="16dp"
-                android:src="@drawable/ic_take_image"
-                android:scaleType="fitXY"
-                android:tooltipText="Take a cover photo for the story"
-
-                />
-
-            <TextView
-                android:id="@+id/tv_story_title_heading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textAppearance="@android:style/TextAppearance.Medium"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et_story_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:hint="Enter Title of Story"
-                android:padding="16dp" />
-
-            <TextView
-                android:id="@+id/tv_story_description_heading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="StoryLine"
-                android:textAppearance="@android:style/TextAppearance.Medium"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et_story_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:hint="Write Story Here"
-                android:maxLength="300"
-                android:padding="16dp" />
-
-            <TextView
-                android:id="@+id/tv_plot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Plot"
-                android:textAppearance="@android:style/TextAppearance.Medium"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et_plot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#use #hastags #to #define #plotOfTheStory"
-                android:paddingBottom="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_characters"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Characters"
-                android:textAppearance="@android:style/TextAppearance.Medium"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                android:scrollbars="horizontal"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="7dp"
+                app:contentPadding="7dp"
+                app:cardCornerRadius="7dp"
+                app:cardMaxElevation="7dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                app:cardUseCompatPadding="true"
                 >
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_character_one"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    style="@style/ImageStyle"
-                    app:civ_border_width="2dp"
-                    app:civ_border_color="#FF000000"
-                    android:tooltipText="Take a cover photo for the story" />
+                <ImageView
+                    android:id="@+id/iv_story_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_take_image"
+                    android:scaleType="fitXY"
+                    android:tooltipText="Take a cover photo for the story"
+                    />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:background="@android:color/darker_gray" />
-
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_character_two"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    style="@style/ImageStyle"
-                    app:civ_border_width="2dp"
-                    app:civ_border_color="#FF000000"
-                    android:tooltipText="Take a cover photo for the story" />
+            </android.support.v7.widget.CardView>
 
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:background="@android:color/darker_gray" />
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="7dp"
+                app:contentPadding="7dp"
+                app:cardCornerRadius="7dp"
+                app:cardMaxElevation="7dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                app:cardUseCompatPadding="true"
+                >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tv_story_title_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_story_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="Enter Title of Story"
+                        android:padding="16dp" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="7dp"
+                app:contentPadding="7dp"
+                app:cardCornerRadius="7dp"
+                app:cardMaxElevation="7dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                app:cardUseCompatPadding="true"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_story_description_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="StoryLine"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_story_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="Write Story Here"
+                        android:maxLength="300"
+                        android:padding="16dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="7dp"
+                app:contentPadding="7dp"
+                app:cardCornerRadius="7dp"
+                app:cardMaxElevation="7dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                app:cardUseCompatPadding="true"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_plot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Plot"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_plot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="#use #hastags #to #define #plotOfTheStory"
+                        android:paddingBottom="16dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_character_three"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    style="@style/ImageStyle"
-                    app:civ_border_width="2dp"
-                    app:civ_border_color="#FF000000"
-                    android:tooltipText="Take a cover photo for the story" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="7dp"
+                app:contentPadding="7dp"
+                app:cardCornerRadius="7dp"
+                app:cardMaxElevation="7dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                app:cardUseCompatPadding="true"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                    android:id="@+id/tv_characters"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Characters"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textStyle="bold" />
+
+
+                    <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_character_one"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        style="@style/ImageStyle"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"
+                        android:tooltipText="Take a cover photo for the story" />
+
+                    <!--<View-->
+                        <!--android:layout_width="1dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_margin="5dp"-->
+                        <!--android:background="@android:color/darker_gray" />-->
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_character_two"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        style="@style/ImageStyle"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"
+                        android:tooltipText="Take a cover photo for the story" />
+
+
+                    <!--<View-->
+                        <!--android:layout_width="1dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_margin="5dp"-->
+                        <!--android:background="@android:color/darker_gray" />-->
 
 
 
-            </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_character_three"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        style="@style/ImageStyle"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"
+                        android:tooltipText="Take a cover photo for the story" />
+
+
+
+                </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
 
 
         </LinearLayout>
@@ -162,7 +265,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="15dp"
             android:src="@drawable/ic_save_story"
-            android:tint="@android:color/black"
+            android:tint="@android:color/white"
             />
 
     </FrameLayout>

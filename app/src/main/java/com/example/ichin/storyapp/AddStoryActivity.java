@@ -1,8 +1,10 @@
 package com.example.ichin.storyapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -118,7 +120,8 @@ public class AddStoryActivity extends AppCompatActivity {
         }
         else{
 
-            takePicture(pic);
+            openAddPicDailog(pic);
+//            takePicture(pic);
         }
     }
 
@@ -251,7 +254,66 @@ public class AddStoryActivity extends AppCompatActivity {
         if(requestCode == 100 && resultCode == RESULT_OK){ coverPhoto.setImageURI(file); }
         if(requestCode == 101 && resultCode == RESULT_OK){ charPhotoOne.setImageURI(cOne); }
         if(requestCode == 102 && resultCode == RESULT_OK){ charPhotoTwo.setImageURI(cTwo); }
-        if(requestCode == 103 && resultCode == RESULT_OK){ charPhotoThree.setImageURI(cThree); }
+        if(requestCode == 103 && resultCode == RESULT_OK){ charPhotoThree.setImageURI(cThree);}
+
+        if(requestCode == 200 && resultCode == RESULT_OK){ file=data.getData(); coverPhoto.setImageURI(data.getData()); }
+        if(requestCode == 201 && resultCode == RESULT_OK){ cOne =data.getData(); charPhotoOne.setImageURI(data.getData()); }
+        if(requestCode == 202 && resultCode == RESULT_OK){ cTwo =data.getData();charPhotoTwo.setImageURI(data.getData()); }
+        if(requestCode == 203 && resultCode == RESULT_OK){ cThree =data.getData();charPhotoThree.setImageURI(data.getData());}
+
+
     }
 
+    private void openAddPicDailog(final int pic){
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(AddStoryActivity.this);
+        dialogBuilder.setTitle("Add an Image using");
+        dialogBuilder.setItems(getResources().getStringArray(R.array.add_pic_options), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch(which){
+                    case 0:
+                        takePicture(pic);
+                        break;
+                    case 1:
+                        openGallery(pic);
+                        break;
+                }
+
+            }
+        });
+
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+
+    }
+
+    private void openGallery(int pic) {
+        Intent intent = new Intent();
+
+        switch(pic){
+            case 0:
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                startActivityForResult(Intent.createChooser(intent,"Choose an image from gallery"),200);
+                break;
+            case 1:
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                startActivityForResult(Intent.createChooser(intent,"Choose an image from gallery"),201);
+                break;
+            case 2:
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                startActivityForResult(Intent.createChooser(intent,"Choose an image from gallery"),202);
+                break;
+            case 3:
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                startActivityForResult(Intent.createChooser(intent,"Choose an image from gallery"),203);
+                break;
+        }
+
+
+
+    }
 }

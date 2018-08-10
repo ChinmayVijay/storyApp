@@ -48,6 +48,7 @@ public class StoryModel {
         this.description = description;
         this.size = size;
         this.posterPath = posterPath;
+        this.updatedAt = updatedAt;
         this.plot = plot;
         this.characterOnePath = characterOnePath;
         this.characterTwoPath = characterTwoPath;

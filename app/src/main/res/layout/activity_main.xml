@@ -28,7 +28,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
         android:src="@drawable/ic_add_story"
-        android:tint="@android:color/black"
+        android:tint="@android:color/white"
         />
 
 
