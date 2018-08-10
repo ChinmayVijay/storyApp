@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">StoryApp</string>
+    <string-array name="add_pic_options">
+        <item>Open Camera</item>
+        <item>Choose from gallery</item>
+    </string-array>
 </resources>

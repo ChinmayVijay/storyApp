@@ -3,10 +3,10 @@ package com.example.ichin.storyapp;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +14,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.example.ichin.storyapp.database.StoryDatabase;
+import com.example.ichin.storyapp.executors.StoryAppExecutors;
 import com.example.ichin.storyapp.listeners.OnStoryCoverListener;
 import com.example.ichin.storyapp.model.StoryModel;
 import com.example.ichin.storyapp.viewmodel.MainViewModel;
@@ -64,11 +65,17 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int direction) {
                 //put delete logic
-                int position = viewHolder.getAdapterPosition();
-                List<StoryModel> stories = mAdadpter.getStories();
-                mDb.storyDao().deleteStory(stories.get(position));
+                StoryAppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        int position = viewHolder.getAdapterPosition();
+                        List<StoryModel> stories = mAdadpter.getStories();
+                        mDb.storyDao().deleteStory(stories.get(position));
+                    }
+                });
+
             }
         }).attachToRecyclerView(storyRecyclerView);
 
@@ -80,9 +87,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mDb = StoryDatabase.getInstance(this);
+        mDb = StoryDatabase.getInstance(getApplicationContext());
 
         setupViewModel();
+
 
 
 

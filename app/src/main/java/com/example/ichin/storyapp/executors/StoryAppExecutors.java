@@ -1,6 +1,5 @@
 package com.example.ichin.storyapp.executors;
 
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
